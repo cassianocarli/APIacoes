@@ -1,6 +1,3 @@
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	Validação do formulário de pesquisa de ações
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/	
 
 // Ticker da ação cujos dados quer consultar
 var symbol = 'PETR4.SA';
@@ -25,11 +22,6 @@ function validar(){
 }
 
 
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	Programação do uso da API AlphaVantage
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/	
-
-// Sua chave para acesso à API
 var apiKey = 'XV1VMZCOO6Q4P71I';
 
 // URL para solicitar dados de cotação diária de uma ação
@@ -104,9 +96,8 @@ function showData(data) {
 			parseFloat(aux[field]['4. close'])
 		];
 		
-		//lineChartData.push(auxValues );
 		rowsCount++;
-	} // for	
+	} 	
 	
 	media = media / rowsCount;
 	
@@ -127,11 +118,6 @@ function addTableContent(date, open, close){
 	var myTable = document.getElementById('series-table').tBodies[0];	
 	myTable.innerHTML = myTable.innerHTML + `<tr><td>${date}</td><td>${open}</td><td>${close}</td></tr>`;
 }
-
-
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	Gráficos Google Charts para os valores recebidos via API
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/	
 
 // Gráfico de colunas para valores de referência
 function drawMultSeries() {
